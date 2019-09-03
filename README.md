@@ -1,0 +1,2 @@
+# rust-sample
+rust sample
