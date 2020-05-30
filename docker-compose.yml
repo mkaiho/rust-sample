@@ -1,0 +1,16 @@
+version: '3.7'
+
+## Environment variables for workspace
+x-app-working-dir: &APP_WORKING_DIR
+  "/home/rust-sample"
+x-app-volumes: &APP_VOLUMES
+  - ".:/home/rust-sample"
+
+services:
+  workspace:
+    build:
+      context: ./docker/workspace
+    container_name: rust-workspace
+    volumes: *APP_VOLUMES
+    working_dir: *APP_WORKING_DIR
+    tty: true
